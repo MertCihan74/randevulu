@@ -1,1 +1,362 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Elif Güzellik Merkezi - Bartın'ın En İyisi</title>
+    <link rel="stylesheet" href="stil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <span>STUDIO ELİF</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link active">Ana Sayfa</a>
+                <a href="hizmetler.html" class="nav-link">Hizmetler</a>
+                <a href="randevu.html" class="nav-link">Randevu Al</a>
+                <a href="galeri.html" class="nav-link">Galeri</a>
+                <a href="ekibimiz.html" class="nav-link">Ekibimiz</a>
+                <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+                <a href="iletisim.html" class="nav-link">İletişim</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="randevu.html" class="cta-button">Hemen Randevu Al</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Ana Sayfa -->
+    <section id="anasayfa" class="hero">
+        <div class="hero-slider">
+            <div class="slide active">
+                <div class="slide-content">
+                    <a href="randevu.html" class="cta-button large">Hemen Randevu Al</a>
+                </div>
+                <div class="slide-image" style="background-image: url('randevuludemo1.png')">
+                    <!-- Hero görsel 1 -->
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <a href="randevu.html" class="cta-button large">Hemen Randevu Al</a>
+                </div>
+                <div class="slide-image" style="background-image: url('randevuludemo2.png')">
+                    <!-- Hero görsel 2 -->
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <a href="randevu.html" class="cta-button large">Hemen Randevu Al</a>
+                </div>
+                <div class="slide-image" style="background-image: url('randevuludemo3.png')">
+                    <!-- Hero görsel 3 -->
+                </div>
+            </div>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- Hizmetler Özeti -->
+    <section class="services-preview">
+        <div class="container">
+            <h2>Hizmetlerimiz</h2>
+            <p>Profesyonel ekibimizle sunduğumuz hizmetler</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Saç Kesimi</h3>
+                    <p>150₺'den başlayan fiyatlarla</p>
+                    <a href="hizmetler.html" class="service-link">Detaylı Bilgi</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Saç Boyama</h3>
+                    <p>300₺'den başlayan fiyatlarla</p>
+                    <a href="hizmetler.html" class="service-link">Detaylı Bilgi</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Fön & Şekillendirme</h3>
+                    <p>100₺</p>
+                    <a href="hizmetler.html" class="service-link">Detaylı Bilgi</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Keratin Bakım</h3>
+                    <p>500₺</p>
+                    <a href="hizmetler.html" class="service-link">Detaylı Bilgi</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+                    <h3>Manikür & Pedikür</h3>
+                    <p>200₺</p>
+                    <a href="hizmetler.html" class="service-link">Detaylı Bilgi</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Cilt Bakımı</h3>
+                    <p>250₺</p>
+                    <a href="hizmetler.html" class="service-link">Detaylı Bilgi</a>
+                </div>
+            </div>
+            <div class="cta-section">
+                <a href="randevu.html" class="cta-button large">Hemen Randevu Al</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ekibimiz -->
+    <section class="team">
+        <div class="container">
+            <h2>Ekibimiz</h2>
+            <p>Deneyimli ve profesyonel ekibimiz</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <!-- Elif Demir fotoğrafı - Sonra eklenecek -->
+                    </div>
+                    <h3>Elif Demir</h3>
+                    <p>Kurucu & Saç Uzmanı</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <!-- Ayşe Kaya fotoğrafı - Sonra eklenecek -->
+                    </div>
+                    <h3>Ayşe Kaya</h3>
+                    <p>Güzellik Uzmanı</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <!-- Zeynep Yılmaz fotoğrafı - Sonra eklenecek -->
+                    </div>
+                    <h3>Zeynep Yılmaz</h3>
+                    <p>Tırnak Uzmanı</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri -->
+    <section class="gallery-preview">
+        <div class="container">
+            <h2>Öncesi-Sonrası</h2>
+            <p>Çalışmalarımızdan bazı örnekler</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <!-- Öncesi-Sonrası 1 - Sonra eklenecek -->
+                </div>
+                <div class="gallery-item">
+                    <!-- Öncesi-Sonrası 2 - Sonra eklenecek -->
+                </div>
+                <div class="gallery-item">
+                    <!-- Öncesi-Sonrası 3 - Sonra eklenecek -->
+                </div>
+                <div class="gallery-item">
+                    <!-- Öncesi-Sonrası 4 - Sonra eklenecek -->
+                </div>
+            </div>
+            <div class="cta-section">
+                <a href="galeri.html" class="cta-button">Tüm Galeriyi Gör</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Müşteri Yorumları -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Müşteri Yorumları</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <p>"Studio Elif'te harika bir deneyim yaşadım. Elif Hanım çok profesyonel ve saçımı tam istediğim gibi yaptı."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <!-- Müşteri fotoğrafı 1 - Sonra eklenecek -->
+                            </div>
+                            <div class="author-info">
+                                <h4>Fatma K.</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Manikür ve pedikür hizmetleri mükemmel. Hijyenik ortam ve kaliteli malzemeler kullandıklarını görebiliyorum."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <!-- Müşteri fotoğrafı 2 - Sonra eklenecek -->
+                            </div>
+                            <div class="author-info">
+                                <h4>Mehmet A.</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Cilt bakımı sonrası cildim çok daha parlak ve sağlıklı görünüyor. Kesinlikle tavsiye ederim."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <!-- Müşteri fotoğrafı 3 - Sonra eklenecek -->
+                            </div>
+                            <div class="author-info">
+                                <h4>Ayşe T.</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active" data-testimonial="0"></span>
+                <span class="dot" data-testimonial="1"></span>
+                <span class="dot" data-testimonial="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Bilgileri -->
+    <section class="contact-info">
+        <div class="container">
+            <h2>Bize Ulaşın</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Telefon</h3>
+                    <p>0532 XXX XX XX</p>
+                    <a href="https://wa.me/90532XXXXXXX" class="whatsapp-link">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Adres</h3>
+                    <p>Hürriyet Caddesi No:45<br>Bartın</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>Çalışma Saatleri</h3>
+                    <p>Pazartesi - Cumartesi: 09:00 - 19:00<br>Pazar: Kapalı</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Sosyal Medya</h3>
+                    <p>@studioelif</p>
+                    <a href="#" class="social-link">Takip Et</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-spa"></i>
+                    <span>STUDIO ELİF</span>
+                </div>
+                <div class="footer-links">
+                    <a href="hakkimizda.html">Hakkımızda</a>
+                    <a href="hizmetler.html">Hizmetler</a>
+                    <a href="galeri.html">Galeri</a>
+                    <a href="iletisim.html">İletişim</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Studio Elif Güzellik Merkezi. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAlSsSsKy-g5ZqlElkLILKLKfSNJ_E7SV0",
+        authDomain: "randevuludemo.firebaseapp.com",
+        projectId: "randevuludemo",
+        storageBucket: "randevuludemo.firebasestorage.app",
+        messagingSenderId: "985251253002",
+        appId: "1:985251253002:web:4ef0d6125a8dd0adcf08f3",
+        measurementId: "G-G3B1Z9EEKR"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Studio Elif Güzellik Merkezi</title>
+    <link rel="stylesheet" href="stil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <span>STUDIO ELİF</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Ana Sayfa</a>
+                <a href="hizmetler.html" class="nav-link">Hizmetler</a>
+                <a href="randevu.html" class="nav-link">Randevu Al</a>
+                <a href="galeri.html" class="nav-link">Galeri</a>
+                <a href="ekibimiz.html" class="nav-link">Ekibimiz</a>
+                <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+                <a href="iletisim.html" class="nav-link active">İletişim</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="randevu.html" class="cta-button">Hemen Randevu Al</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>İletişim</h1>
+            <p>Bize ulaşın, sorularınızı sorun</p>
+        </div>
+    </section>
+
+    <!-- İletişim Ana Bölüm -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- İletişim Formu -->
+                <div class="contact-form-section">
+                    <h2>Bize Yazın</h2>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Ad Soyad *</label>
+                                <input type="text" id="contact-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">E-posta *</label>
+                                <input type="email" id="contact-email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Telefon</label>
+                            <input type="tel" id="contact-phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Konu *</label>
+                            <select id="contact-subject" required>
+                                <option value="">Konu seçin</option>
+                                <option value="randevu">Randevu Hakkında</option>
+                                <option value="hizmet">Hizmetler Hakkında</option>
+                                <option value="fiyat">Fiyat Sorgulama</option>
+                                <option value="sikayet">Şikayet/Öneri</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Mesajınız *</label>
+                            <textarea id="contact-message" rows="5" required placeholder="Mesajınızı buraya yazın..."></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Gönder</button>
+                    </form>
+                </div>
+
+                <!-- İletişim Bilgileri -->
+                <div class="contact-info-section">
+                    <h2>İletişim Bilgileri</h2>
+                    <div class="contact-info-list">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3>Adres</h3>
+                                <p>Hürriyet Caddesi No:45<br>Bartın, Türkiye</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3>Telefon</h3>
+                                <p>0532 XXX XX XX</p>
+                                <a href="https://wa.me/90532XXXXXXX" class="whatsapp-link">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp ile ulaşın
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3>E-posta</h3>
+                                <p>info@studioelif.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3>Çalışma Saatleri</h3>
+                                <p><strong>Pazartesi - Cumartesi:</strong> 09:00 - 19:00<br>
+                                <strong>Pazar:</strong> Kapalı</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3>Sosyal Medya</h3>
+                                <p>@studioelif</p>
+                                <a href="#" class="social-link">Bizi takip edin</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Harita Bölümü -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Bizi Bulun</h2>
+            <div class="map-container">
+                <!-- Google Maps embed - Gerçek konum için güncellenecek -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.5!2d32.733!3d41.635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDM4JzA2LjAiTiAzMsKwNDMnNTUuMiJF!5e0!3m2!1str!2str!4v1635000000000!5m2!1str!2str" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Bölümü -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Sık Sorulan Sorular</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Randevu iptali için ne yapmalıyım?</h3>
+                    <p>Randevunuzu iptal etmek için en az 24 saat öncesinden telefonla veya WhatsApp üzerinden bize ulaşabilirsiniz. Bu durumda ücret iadesi yapılır.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Hizmetler için ön ödeme gerekli mi?</h3>
+                    <p>Keratin bakımı ve özel hizmetlerde %30 ön ödeme alınmaktadır. Diğer hizmetlerde randevu sonrası ödeme yapabilirsiniz.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Çocuklara hizmet veriyor musunuz?</h3>
+                    <p>Evet, 7 yaş ve üzeri çocuklara saç kesimi ve bakım hizmetleri veriyoruz. Çocuk dostu ortamımızda hizmet sunuyoruz.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Hangi markaların ürünlerini kullanıyorsunuz?</h3>
+                    <p>L'Oréal, Wella, Schwarzkopf ve Kerastase gibi uluslararası markaların profesyonel ürünlerini kullanıyoruz.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Hijyen önlemleriniz nelerdir?</h3>
+                    <p>Tüm malzemelerimiz sterilize edilmektedir. Her müşteri sonrası çalışma alanları dezenfekte edilir ve tek kullanımlık malzemeler kullanılır.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Erkek müşterilere de hizmet veriyor musunuz?</h3>
+                    <p>Evet, uzman ekibimizde erkek saç kesimi ve bakımı konusunda deneyimli personelimiz bulunmaktadır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section-large">
+        <div class="container">
+            <h2>Hemen Bize Ulaşın!</h2>
+            <p>Sorularınız için 7/24 yanınızdayız</p>
+            <div class="cta-buttons">
+                <a href="tel:0532XXXXXXX" class="cta-button">Ara</a>
+                <a href="https://wa.me/90532XXXXXXX" class="cta-button whatsapp">WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-spa"></i>
+                    <span>STUDIO ELİF</span>
+                </div>
+                <div class="footer-links">
+                    <a href="hakkimizda.html">Hakkımızda</a>
+                    <a href="hizmetler.html">Hizmetler</a>
+                    <a href="galeri.html">Galeri</a>
+                    <a href="iletisim.html">İletişim</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Studio Elif Güzellik Merkezi. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAlSsSsKy-g5ZqlElkLILKLKfSNJ_E7SV0",
+        authDomain: "randevuludemo.firebaseapp.com",
+        projectId: "randevuludemo",
+        storageBucket: "randevuludemo.firebasestorage.app",
+        messagingSenderId: "985251253002",
+        appId: "1:985251253002:web:4ef0d6125a8dd0adcf08f3",
+        measurementId: "G-G3B1Z9EEKR"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+
+    <script>
+        // İletişim formu için JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Form verilerini al
+                const formData = {
+                    name: document.getElementById('contact-name').value,
+                    email: document.getElementById('contact-email').value,
+                    phone: document.getElementById('contact-phone').value,
+                    subject: document.getElementById('contact-subject').value,
+                    message: document.getElementById('contact-message').value
+                };
+
+                // Validasyon
+                if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                    alert('Lütfen tüm zorunlu alanları doldurunuz.');
+                    return;
+                }
+
+                if (!validateEmail(formData.email)) {
+                    alert('Geçerli bir e-posta adresi giriniz.');
+                    return;
+                }
+
+                // Başarı mesajı (gerçek uygulamada sunucuya gönderilecek)
+                alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
+                contactForm.reset();
+            });
+
+            // FAQ accordion efekti
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

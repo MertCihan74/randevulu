@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Studio Elif</title>
+    <link rel="stylesheet" href="stil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-container">
+            <div class="admin-logo">
+                <i class="fas fa-spa"></i>
+                <span>STUDIO ELİF - Admin Panel</span>
+            </div>
+            <div class="admin-user">
+                <i class="fas fa-user-circle"></i>
+                <span>Yönetici</span>
+                <a href="index.html" class="admin-logout">
+                    <i class="fas fa-sign-out-alt"></i> Çıkış
+                </a>
+                <button class="admin-mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Sidebar -->
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <a href="#dashboard" class="admin-nav-link active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#appointments" class="admin-nav-link" data-section="appointments">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Randevular</span>
+                </a>
+                <a href="#calendar" class="admin-nav-link" data-section="calendar">
+                    <i class="fas fa-calendar"></i>
+                    <span>Takvim</span>
+                </a>
+                <a href="#customers" class="admin-nav-link" data-section="customers">
+                    <i class="fas fa-users"></i>
+                    <span>Müşteriler</span>
+                </a>
+                <a href="#services" class="admin-nav-link" data-section="services">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Hizmetler</span>
+                </a>
+                <a href="#settings" class="admin-nav-link" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Ayarlar</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard -->
+            <section id="dashboard" class="admin-section active">
+                <div class="admin-section-header">
+                    <h1>Dashboard</h1>
+                    <p>Bugünkü özet ve istatistikler</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>Bugün</h3>
+                            <div class="stats-number" id="today-appointments">5</div>
+                            <p>Randevu</p>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>Yarın</h3>
+                            <div class="stats-number" id="tomorrow-appointments">3</div>
+                            <p>Randevu</p>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>Bekleyen</h3>
+                            <div class="stats-number" id="pending-appointments">2</div>
+                            <p>Onay</p>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stats-content">
+                            <h3>Bu Ay</h3>
+                            <div class="stats-number" id="monthly-appointments">45</div>
+                            <p>Randevu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Appointments -->
+                <div class="recent-appointments">
+                    <h2>Son Randevular</h2>
+                    <div class="appointments-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Müşteri</th>
+                                    <th>Hizmet</th>
+                                    <th>Tarih</th>
+                                    <th>Saat</th>
+                                    <th>Durum</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-appointments-body">
+                                <!-- JavaScript ile doldurulacak -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appointments -->
+            <section id="appointments" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Randevu Yönetimi</h1>
+                    <p>Tüm randevuları görüntüleyin ve yönetin</p>
+                </div>
+
+                <div class="appointments-controls">
+                    <div class="search-filter">
+                        <input type="text" placeholder="Müşteri ara..." id="appointment-search">
+                        <select id="status-filter">
+                            <option value="all">Tüm Durumlar</option>
+                            <option value="pending">Bekleyen</option>
+                            <option value="confirmed">Onaylandı</option>
+                            <option value="cancelled">İptal Edildi</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="appointments-table-full">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Müşteri</th>
+                                <th>Telefon</th>
+                                <th>E-posta</th>
+                                <th>Hizmet</th>
+                                <th>Tarih</th>
+                                <th>Saat</th>
+                                <th>Durum</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody id="all-appointments-body">
+                            <!-- JavaScript ile doldurulacak -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Calendar -->
+            <section id="calendar" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Takvim Görünümü</h1>
+                    <p>Randevuları takvim üzerinde görüntüleyin</p>
+                </div>
+
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                        <h2 id="calendar-month-year">Aralık 2024</h2>
+                        <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid">
+                        <div class="calendar-day-header">Pzt</div>
+                        <div class="calendar-day-header">Sal</div>
+                        <div class="calendar-day-header">Çar</div>
+                        <div class="calendar-day-header">Per</div>
+                        <div class="calendar-day-header">Cum</div>
+                        <div class="calendar-day-header">Cmt</div>
+                        <div class="calendar-day-header">Paz</div>
+                        <!-- Takvim günleri JavaScript ile doldurulacak -->
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day">1</div>
+                        <div class="calendar-day">2</div>
+                        <div class="calendar-day">3</div>
+                        <div class="calendar-day">4</div>
+                        <div class="calendar-day">5</div>
+                        <div class="calendar-day">6</div>
+                        <div class="calendar-day">7</div>
+                        <div class="calendar-day">8</div>
+                        <div class="calendar-day">9</div>
+                        <div class="calendar-day">10</div>
+                        <div class="calendar-day">11</div>
+                        <div class="calendar-day">12</div>
+                        <div class="calendar-day">13</div>
+                        <div class="calendar-day">14</div>
+                        <div class="calendar-day">15</div>
+                        <div class="calendar-day">16</div>
+                        <div class="calendar-day">17</div>
+                        <div class="calendar-day">18</div>
+                        <div class="calendar-day">19</div>
+                        <div class="calendar-day">20</div>
+                        <div class="calendar-day">21</div>
+                        <div class="calendar-day">22</div>
+                        <div class="calendar-day">23</div>
+                        <div class="calendar-day">24</div>
+                        <div class="calendar-day">25</div>
+                        <div class="calendar-day">26</div>
+                        <div class="calendar-day">27</div>
+                        <div class="calendar-day">28</div>
+                        <div class="calendar-day">29</div>
+                        <div class="calendar-day">30</div>
+                        <div class="calendar-day">31</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customers -->
+            <section id="customers" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Müşteri Yönetimi</h1>
+                    <p>Müşteri bilgilerini görüntüleyin</p>
+                </div>
+
+                <div class="customers-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Ad Soyad</th>
+                                <th>Telefon</th>
+                                <th>E-posta</th>
+                                <th>Toplam Randevu</th>
+                                <th>Son Randevu</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customers-body">
+                            <!-- JavaScript ile doldurulacak -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Services -->
+            <section id="services" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Hizmet Yönetimi</h1>
+                    <p>Hizmetleri düzenleyin ve fiyatları güncelleyin</p>
+                </div>
+
+                <div class="services-management">
+                    <div class="services-list">
+                        <div class="service-item-admin">
+                            <div class="service-info-admin">
+                                <h3>Saç Kesimi</h3>
+                                <p>Kadın, erkek ve çocuk saç kesimi</p>
+                            </div>
+                            <div class="service-price-admin">
+                                <span class="current-price">150₺</span>
+                                <button class="edit-price-btn">Düzenle</button>
+                            </div>
+                        </div>
+                        <div class="service-item-admin">
+                            <div class="service-info-admin">
+                                <h3>Saç Boyama</h3>
+                                <p>Kalıcı, yarı kalıcı boyama</p>
+                            </div>
+                            <div class="service-price-admin">
+                                <span class="current-price">300₺</span>
+                                <button class="edit-price-btn">Düzenle</button>
+                            </div>
+                        </div>
+                        <div class="service-item-admin">
+                            <div class="service-info-admin">
+                                <h3>Keratin Bakım</h3>
+                                <p>Saç onarımı ve düzleştirme</p>
+                            </div>
+                            <div class="service-price-admin">
+                                <span class="current-price">500₺</span>
+                                <button class="edit-price-btn">Düzenle</button>
+                            </div>
+                        </div>
+                        <!-- Diğer hizmetler eklenebilir -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings -->
+            <section id="settings" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Ayarlar</h1>
+                    <p>Sistem ayarlarını yönetin</p>
+                </div>
+
+                <div class="settings-form">
+                    <div class="settings-group">
+                        <h3>Çalışma Saatleri</h3>
+                        <div class="setting-item">
+                            <label>Pazartesi - Cumartesi:</label>
+                            <input type="text" value="09:00 - 19:00">
+                        </div>
+                        <div class="setting-item">
+                            <label>Pazar:</label>
+                            <input type="text" value="Kapalı">
+                        </div>
+                    </div>
+
+                    <div class="settings-group">
+                        <h3>İletişim Bilgileri</h3>
+                        <div class="setting-item">
+                            <label>Telefon:</label>
+                            <input type="text" value="0532 XXX XX XX">
+                        </div>
+                        <div class="setting-item">
+                            <label>E-posta:</label>
+                            <input type="email" value="info@studioelif.com">
+                        </div>
+                        <div class="setting-item">
+                            <label>Adres:</label>
+                            <textarea rows="2">Hürriyet Caddesi No:45, Bartın</textarea>
+                        </div>
+                    </div>
+
+                    <div class="settings-actions">
+                        <button class="cta-button">Kaydet</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <!-- Randevu Detay Modal -->
+    <div id="appointment-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Randevu Detayları</h3>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body" id="appointment-modal-body">
+                <!-- Modal içeriği JavaScript ile doldurulacak -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel">İptal Et</button>
+                <button class="btn-confirm">Onayla</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAlSsSsKy-g5ZqlElkLILKLKfSNJ_E7SV0",
+        authDomain: "randevuludemo.firebaseapp.com",
+        projectId: "randevuludemo",
+        storageBucket: "randevuludemo.firebasestorage.app",
+        messagingSenderId: "985251253002",
+        appId: "1:985251253002:web:4ef0d6125a8dd0adcf08f3",
+        measurementId: "G-G3B1Z9EEKR"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+
+    <script>
+        // Admin paneli için JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileToggle = document.querySelector('.admin-mobile-toggle');
+            const sidebar = document.querySelector('.admin-sidebar');
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('open');
+                });
+            }
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768 && !sidebar.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    sidebar.classList.remove('open');
+                }
+            });
+
+            // Navigation
+            const navLinks = document.querySelectorAll('.admin-nav-link');
+            const sections = document.querySelectorAll('.admin-section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.dataset.section;
+
+                    // Aktif link değiştir
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Section değiştir
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+
+            // Örnek randevu verileri (gerçek uygulamada Firebase'den gelecek)
+            const sampleAppointments = [
+                {
+                    id: 1,
+                    name: 'Fatma Kaya',
+                    phone: '0532 XXX XX XX',
+                    email: 'fatma@example.com',
+                    service: 'Saç Kesimi',
+                    date: '2024-12-25',
+                    time: '10:00',
+                    status: 'pending',
+                    notes: 'Uzun saç istiyorum'
+                },
+                {
+                    id: 2,
+                    name: 'Mehmet Demir',
+                    phone: '0532 XXX XX XX',
+                    email: 'mehmet@example.com',
+                    service: 'Saç Boyama',
+                    date: '2024-12-25',
+                    time: '14:00',
+                    status: 'confirmed',
+                    notes: ''
+                },
+                {
+                    id: 3,
+                    name: 'Ayşe Yılmaz',
+                    phone: '0532 XXX XX XX',
+                    email: 'ayse@example.com',
+                    service: 'Keratin Bakım',
+                    date: '2024-12-26',
+                    time: '11:00',
+                    status: 'confirmed',
+                    notes: 'Alerjim var, dikkatli olun'
+                }
+            ];
+
+            // Local Storage'dan randevuları al ve birleştir
+            const storedAppointments = getAppointments();
+            const allAppointments = [...sampleAppointments, ...storedAppointments];
+
+            // Dashboard'u güncelle
+            updateDashboard(allAppointments);
+
+            // Randevu tablolarını doldur
+            populateAppointmentsTable(allAppointments);
+            populateRecentAppointments(allAppointments);
+
+            // Müşteri listesini oluştur
+            populateCustomersTable(allAppointments);
+
+            // Modal işlemleri
+            const modal = document.getElementById('appointment-modal');
+            const modalClose = document.querySelector('.modal-close');
+            const btnCancel = document.querySelector('.btn-cancel');
+            const btnConfirm = document.querySelector('.btn-confirm');
+
+            modalClose.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            btnCancel.addEventListener('click', () => {
+                // Seçili randevuyu iptal et
+                const appointmentId = modal.dataset.appointmentId;
+                updateAppointmentStatus(appointmentId, 'cancelled');
+                modal.style.display = 'none';
+                location.reload(); // Sayfayı yenile
+            });
+
+            btnConfirm.addEventListener('click', () => {
+                // Seçili randevuyu onayla
+                const appointmentId = modal.dataset.appointmentId;
+                updateAppointmentStatus(appointmentId, 'confirmed');
+                modal.style.display = 'none';
+                location.reload(); // Sayfayı yenile
+            });
+
+            // Tablo satırlarına tıklama
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('view-appointment') || e.target.closest('.view-appointment')) {
+                    const appointmentId = e.target.closest('tr').dataset.appointmentId;
+                    showAppointmentModal(appointmentId, allAppointments);
+                }
+            });
+
+            // Arama ve filtreleme
+            document.getElementById('appointment-search').addEventListener('input', function() {
+                filterAppointments(this.value, document.getElementById('status-filter').value, allAppointments);
+            });
+
+            document.getElementById('status-filter').addEventListener('change', function() {
+                filterAppointments(document.getElementById('appointment-search').value, this.value, allAppointments);
+            });
+        });
+
+        function updateDashboard(appointments) {
+            const today = new Date().toISOString().split('T')[0];
+            const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+
+            const todayAppointments = appointments.filter(app => app.date === today).length;
+            const tomorrowAppointments = appointments.filter(app => app.date === tomorrow).length;
+            const pendingAppointments = appointments.filter(app => app.status === 'pending').length;
+
+            // Bu ayki randevuları hesapla
+            const currentMonth = new Date().getMonth();
+            const currentYear = new Date().getFullYear();
+            const monthlyAppointments = appointments.filter(app => {
+                const appDate = new Date(app.date);
+                return appDate.getMonth() === currentMonth && appDate.getFullYear() === currentYear;
+            }).length;
+
+            document.getElementById('today-appointments').textContent = todayAppointments;
+            document.getElementById('tomorrow-appointments').textContent = tomorrowAppointments;
+            document.getElementById('pending-appointments').textContent = pendingAppointments;
+            document.getElementById('monthly-appointments').textContent = monthlyAppointments;
+        }
+
+        function populateAppointmentsTable(appointments) {
+            const tbody = document.getElementById('all-appointments-body');
+            tbody.innerHTML = '';
+
+            appointments.forEach(appointment => {
+                const row = createAppointmentRow(appointment);
+                tbody.appendChild(row);
+            });
+        }
+
+        function populateRecentAppointments(appointments) {
+            const tbody = document.getElementById('recent-appointments-body');
+            tbody.innerHTML = '';
+
+            // Son 5 randevuyu göster
+            const recentAppointments = appointments.slice(-5).reverse();
+
+            recentAppointments.forEach(appointment => {
+                const row = document.createElement('tr');
+                row.dataset.appointmentId = appointment.id;
+                row.innerHTML = `
+                    <td>${appointment.name}</td>
+                    <td>${appointment.service}</td>
+                    <td>${formatDate(appointment.date)}</td>
+                    <td>${appointment.time}</td>
+                    <td><span class="status status-${appointment.status}">${getStatusText(appointment.status)}</span></td>
+                    <td>
+                        <button class="view-appointment">Görüntüle</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function populateCustomersTable(appointments) {
+            const tbody = document.getElementById('customers-body');
+            tbody.innerHTML = '';
+
+            // Benzersiz müşterileri grupla
+            const customers = {};
+            appointments.forEach(app => {
+                if (!customers[app.email]) {
+                    customers[app.email] = {
+                        name: app.name,
+                        email: app.email,
+                        phone: app.phone,
+                        appointments: []
+                    };
+                }
+                customers[app.email].appointments.push(app);
+            });
+
+            Object.values(customers).forEach((customer, index) => {
+                const lastAppointment = customer.appointments.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${customer.name}</td>
+                    <td>${customer.phone}</td>
+                    <td>${customer.email}</td>
+                    <td>${customer.appointments.length}</td>
+                    <td>${lastAppointment ? formatDate(lastAppointment.date) : '-'}</td>
+                    <td>
+                        <button class="view-customer">Detay</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function createAppointmentRow(appointment) {
+            const row = document.createElement('tr');
+            row.dataset.appointmentId = appointment.id;
+            row.innerHTML = `
+                <td>${appointment.id}</td>
+                <td>${appointment.name}</td>
+                <td>${appointment.phone}</td>
+                <td>${appointment.email}</td>
+                <td>${appointment.service}</td>
+                <td>${formatDate(appointment.date)}</td>
+                <td>${appointment.time}</td>
+                <td><span class="status status-${appointment.status}">${getStatusText(appointment.status)}</span></td>
+                <td>
+                    <button class="view-appointment">Görüntüle</button>
+                </td>
+            `;
+            return row;
+        }
+
+        function getStatusText(status) {
+            const statusTexts = {
+                'pending': 'Bekliyor',
+                'confirmed': 'Onaylandı',
+                'cancelled': 'İptal Edildi'
+            };
+            return statusTexts[status] || status;
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('tr-TR');
+        }
+
+        function showAppointmentModal(appointmentId, appointments) {
+            const appointment = appointments.find(app => app.id == appointmentId);
+            if (!appointment) return;
+
+            const modal = document.getElementById('appointment-modal');
+            const modalBody = document.getElementById('appointment-modal-body');
+
+            modalBody.innerHTML = `
+                <div class="appointment-detail">
+                    <div class="detail-row">
+                        <strong>Müşteri:</strong> ${appointment.name}
+                    </div>
+                    <div class="detail-row">
+                        <strong>Telefon:</strong> ${appointment.phone}
+                    </div>
+                    <div class="detail-row">
+                        <strong>E-posta:</strong> ${appointment.email}
+                    </div>
+                    <div class="detail-row">
+                        <strong>Hizmet:</strong> ${appointment.service}
+                    </div>
+                    <div class="detail-row">
+                        <strong>Tarih:</strong> ${formatDate(appointment.date)}
+                    </div>
+                    <div class="detail-row">
+                        <strong>Saat:</strong> ${appointment.time}
+                    </div>
+                    <div class="detail-row">
+                        <strong>Durum:</strong> ${getStatusText(appointment.status)}
+                    </div>
+                    ${appointment.notes ? `<div class="detail-row"><strong>Notlar:</strong> ${appointment.notes}</div>` : ''}
+                </div>
+            `;
+
+            modal.dataset.appointmentId = appointmentId;
+            modal.style.display = 'flex';
+        }
+
+        function filterAppointments(searchTerm, statusFilter, appointments) {
+            const filtered = appointments.filter(appointment => {
+                const matchesSearch = appointment.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                    appointment.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                    appointment.phone.includes(searchTerm);
+                const matchesStatus = statusFilter === 'all' || appointment.status === statusFilter;
+                return matchesSearch && matchesStatus;
+            });
+
+            populateAppointmentsTable(filtered);
+        }
+    </script>
+</body>
+</html>

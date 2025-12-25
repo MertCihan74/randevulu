@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetler - Studio Elif Güzellik Merkezi</title>
+    <link rel="stylesheet" href="stil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <span>STUDIO ELİF</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Ana Sayfa</a>
+                <a href="hizmetler.html" class="nav-link active">Hizmetler</a>
+                <a href="randevu.html" class="nav-link">Randevu Al</a>
+                <a href="galeri.html" class="nav-link">Galeri</a>
+                <a href="ekibimiz.html" class="nav-link">Ekibimiz</a>
+                <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+                <a href="iletisim.html" class="nav-link">İletişim</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="randevu.html" class="cta-button">Hemen Randevu Al</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Hizmetlerimiz</h1>
+            <p>Profesyonel ekibimizle sunduğumuz tüm güzellik hizmetleri</p>
+        </div>
+    </section>
+
+    <!-- Hizmetler Detayları -->
+    <section class="services-detail">
+        <div class="container">
+            <div class="services-categories">
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="sac">Saç Hizmetleri</button>
+                    <button class="category-tab" data-category="tirnak">Tırnak Hizmetleri</button>
+                    <button class="category-tab" data-category="cilt">Cilt Bakımı</button>
+                    <button class="category-tab" data-category="makyaj">Makyaj</button>
+                </div>
+
+                <!-- Saç Hizmetleri -->
+                <div class="category-content active" id="sac">
+                    <div class="services-grid">
+                        <div class="service-detail-card">
+                            <div class="service-header">
+                                <div class="service-icon">
+                                    <i class="fas fa-cut"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3>Saç Kesimi</h3>
+                                    <div class="price">150₺'den başlayan</div>
+                                </div>
+                            </div>
+                            <p>Kadın, erkek ve çocuk saç kesimi hizmetleri. Modern tekniklerle istediğiniz modeli yaratıyoruz.</p>
+                            <div class="service-features">
+                                <span><i class="fas fa-check"></i> Profesyonel kuaförler</span>
+                                <span><i class="fas fa-check"></i> Hijyenik ortam</span>
+                                <span><i class="fas fa-check"></i> Ücretsiz danışmanlık</span>
+                            </div>
+                            <a href="randevu.html?service=sac-kesimi" class="cta-button">Randevu Al</a>
+                        </div>
+
+                        <div class="service-detail-card">
+                            <div class="service-header">
+                                <div class="service-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3>Saç Boyama</h3>
+                                    <div class="price">300₺'den başlayan</div>
+                                </div>
+                            </div>
+                            <p>Kalıcı, yarı kalıcı ve doğal boyalarla saç boyama. Saç yapınıza uygun en iyi renk seçimi.</p>
+                            <div class="service-features">
+                                <span><i class="fas fa-check"></i> L'Oréal ürünleri</span>
+                                <span><i class="fas fa-check"></i> Alerji testi</span>
+                                <span><i class="fas fa-check"></i> Renk garantisi</span>
+                            </div>
+                            <a href="randevu.html?service=sac-boyama" class="cta-button">Randevu Al</a>
+                        </div>
+
+                        <div class="service-detail-card">
+                            <div class="service-header">
+                                <div class="service-icon">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3>Fön & Şekillendirme</h3>
+                                    <div class="price">100₺</div>
+                                </div>
+                            </div>
+                            <p>Profesyonel fön makinesiyle istediğiniz saç şekli. Özel günleriniz için makyajlı fön.</p>
+                            <div class="service-features">
+                                <span><i class="fas fa-check"></i> Özel bakım ürünleri</span>
+                                <span><i class="fas fa-check"></i> Isı koruması</span>
+                                <span><i class="fas fa-check"></i> Uzun süre kalıcılık</span>
+                            </div>
+                            <a href="randevu.html?service=fon-sekillendirme" class="cta-button">Randevu Al</a>
+                        </div>
+
+                        <div class="service-detail-card">
+                            <div class="service-header">
+                                <div class="service-icon">
+                                    <i class="fas fa-spa"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3>Keratin Bakım</h3>
+                                    <div class="price">500₺</div>
+                                </div>
+                            </div>
+                            <p>Saçlarınızı onaran ve koruyan keratin bakımı. Saçlarınızda 3-6 ay kalıcı düzlük ve parlaklık.</p>
+                            <div class="service-features">
+                                <span><i class="fas fa-check"></i> Amerikan keratin</span>
+                                <span><i class="fas fa-check"></i> 6 ay garanti</span>
+                                <span><i class="fas fa-check"></i> Saç onarımı</span>
+                            </div>
+                            <a href="randevu.html?service=keratin-bakim" class="cta-button">Randevu Al</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tırnak Hizmetleri -->
+                <div class="category-content" id="tirnak">
+                    <div class="services-grid">
+                        <div class="service-detail-card">
+                            <div class="service-header">
+                                <div class="service-icon">
+                                    <i class="fas fa-hand-sparkles"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3>Manikür & Pedikür</h3>
+                                    <div class="price">200₺</div>
+                                </div>
+                            </div>
+                            <p>Klasik ve bakım manikür/pedikür hizmetleri. Tırnaklarınızı sağlıklı ve güzel hale getiriyoruz.</p>
+                            <div class="service-features">
+                                <span><i class="fas fa-check"></i> Steril malzemeler</span>
+                                <span><i class="fas fa-check"></i> Özel bakım</span>
+                                <span><i class="fas fa-check"></i> Uzun ömürlü</span>
+                            </div>
+                            <a href="randevu.html?service=manikur-pedikur" class="cta-button">Randevu Al</a>
+                        </div>
+
+                        <div class="service-detail-card">
+                            <div class="service-header">
+                                <div class="service-icon">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3>Jel Tırnak</h3>
+                                    <div class="price">250₺</div>
+                                </div>
+                            </div>
+                            <p>Gel polish ile parlak ve uzun ömürlü tırnak. Çeşitli renk seçenekleri ve tasarımlar.</p>
+                            <div class="service-features">
+                                <span><i class="fas fa-check"></i> 3 hafta kalıcılık</span>
+                                <span><i class="fas fa-check"></i> Çeşitli renkler</span>
+                                <span><i class="fas fa-check"></i> Tasarım seçenekleri</span>
+                            </div>
+                            <a href="randevu.html?service=jel-tirnak" class="cta-button">Randevu Al</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cilt Bakımı -->
+                <div class="category-content" id="cilt">
+                    <div class="services-grid">
+                        <div class="service-detail-card">
+                            <div class="service-header">
+                                <div class="service-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3>Cilt Bakımı</h3>
+                                    <div class="price">250₺</div>
+                                </div>
+                            </div>
+                            <p>Yüz temizliği, peeling ve maske uygulamalarıyla cildinizi yenileyin.</p>
+                            <div class="service-features">
+                                <span><i class="fas fa-check"></i> Derin temizlik</span>
+                                <span><i class="fas fa-check"></i> Nemlendirme</span>
+                                <span><i class="fas fa-check"></i> Gençleştirme</span>
+                            </div>
+                            <a href="randevu.html?service=cilt-bakimi" class="cta-button">Randevu Al</a>
+                        </div>
+
+                        <div class="service-detail-card">
+                            <div class="service-header">
+                                <div class="service-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3>Kaş & Kirpik</h3>
+                                    <div class="price">150₺</div>
+                                </div>
+                            </div>
+                            <p>Kaş şekillendirme ve kirpik lifting hizmetleri. Doğal ve güzel görünüm.</p>
+                            <div class="service-features">
+                                <span><i class="fas fa-check"></i> Kaş şekillendirme</span>
+                                <span><i class="fas fa-check"></i> Kirpik lifting</span>
+                                <span><i class="fas fa-check"></i> Boyama</span>
+                            </div>
+                            <a href="randevu.html?service=kas-kirpik" class="cta-button">Randevu Al</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Makyaj -->
+                <div class="category-content" id="makyaj">
+                    <div class="services-grid">
+                        <div class="service-detail-card">
+                            <div class="service-header">
+                                <div class="service-icon">
+                                    <i class="fas fa-magic"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3>Günlük Makyaj</h3>
+                                    <div class="price">200₺</div>
+                                </div>
+                            </div>
+                            <p>Doğal ve günlük kullanım için hafif makyaj. Yüz hatlarınızı vurgulayan teknikler.</p>
+                            <div class="service-features">
+                                <span><i class="fas fa-check"></i> Doğal görünüm</span>
+                                <span><i class="fas fa-check"></i> Uzun ömürlü</span>
+                                <span><i class="fas fa-check"></i> Kişisel danışmanlık</span>
+                            </div>
+                            <a href="randevu.html?service=gunduz-makyaj" class="cta-button">Randevu Al</a>
+                        </div>
+
+                        <div class="service-detail-card">
+                            <div class="service-header">
+                                <div class="service-icon">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3>Özel Gün Makyaj</h3>
+                                    <div class="price">300₺</div>
+                                </div>
+                            </div>
+                            <p>Düğün, nişan, mezuniyet gibi özel günler için özel makyaj uygulamaları.</p>
+                            <div class="service-features">
+                                <span><i class="fas fa-check"></i> Özel tasarımlar</span>
+                                <span><i class="fas fa-check"></i> Fotoğraf çekimi için</span>
+                                <span><i class="fas fa-check"></i> Uzun süre kalıcılık</span>
+                            </div>
+                            <a href="randevu.html?service=ozel-gun-makyaj" class="cta-button">Randevu Al</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section-large">
+        <div class="container">
+            <h2>Hazır mısınız?</h2>
+            <p>En iyi hizmet için hemen randevunuzu alın</p>
+            <a href="randevu.html" class="cta-button large">Online Randevu Al</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-spa"></i>
+                    <span>STUDIO ELİF</span>
+                </div>
+                <div class="footer-links">
+                    <a href="hakkimizda.html">Hakkımızda</a>
+                    <a href="hizmetler.html">Hizmetler</a>
+                    <a href="galeri.html">Galeri</a>
+                    <a href="iletisim.html">İletişim</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Studio Elif Güzellik Merkezi. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAlSsSsKy-g5ZqlElkLILKLKfSNJ_E7SV0",
+        authDomain: "randevuludemo.firebaseapp.com",
+        projectId: "randevuludemo",
+        storageBucket: "randevuludemo.firebasestorage.app",
+        messagingSenderId: "985251253002",
+        appId: "1:985251253002:web:4ef0d6125a8dd0adcf08f3",
+        measurementId: "G-G3B1Z9EEKR"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+
+    <script>
+        // Hizmet kategorileri için tab sistemi
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.category-tab');
+            const contents = document.querySelectorAll('.category-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Aktif tab'ı değiştir
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // İçerik değiştir
+                    const category = this.dataset.category;
+                    contents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(category).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

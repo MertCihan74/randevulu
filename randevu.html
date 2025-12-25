@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randevu Al - Studio Elif Güzellik Merkezi</title>
+    <link rel="stylesheet" href="stil.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Firebase yapılandırması - Sonra gerçek config ile değiştirilecek
+        // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        // import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+        // const firebaseConfig = {
+        //     apiKey: "your-api-key",
+        //     authDomain: "your-project.firebaseapp.com",
+        //     projectId: "your-project",
+        //     storageBucket: "your-project.appspot.com",
+        //     messagingSenderId: "123456789",
+        //     appId: "your-app-id"
+        // };
+
+        // const app = initializeApp(firebaseConfig);
+        // const db = getFirestore(app);
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <span>STUDIO ELİF</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Ana Sayfa</a>
+                <a href="hizmetler.html" class="nav-link">Hizmetler</a>
+                <a href="randevu.html" class="nav-link active">Randevu Al</a>
+                <a href="galeri.html" class="nav-link">Galeri</a>
+                <a href="ekibimiz.html" class="nav-link">Ekibimiz</a>
+                <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+                <a href="iletisim.html" class="nav-link">İletişim</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="randevu.html" class="cta-button">Hemen Randevu Al</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Randevu Alın</h1>
+            <p>Online randevu sistemimizle kolayca randevunuzu oluşturun</p>
+        </div>
+    </section>
+
+    <!-- Randevu Formu -->
+    <section class="appointment-form">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-steps">
+                    <div class="step active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-text">Hizmet Seç</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-text">Tarih & Saat</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <span class="step-number">3</span>
+                        <span class="step-text">Bilgiler</span>
+                    </div>
+                    <div class="step" data-step="4">
+                        <span class="step-number">4</span>
+                        <span class="step-text">Onay</span>
+                    </div>
+                </div>
+
+                <form id="appointmentForm">
+                    <!-- Adım 1: Hizmet Seçimi -->
+                    <div class="form-step active" id="step1">
+                        <h3>Hangi hizmeti almak istiyorsunuz?</h3>
+                        <div class="service-selection">
+                            <div class="service-option" data-service="sac-kesimi">
+                                <div class="service-icon">
+                                    <i class="fas fa-cut"></i>
+                                </div>
+                                <h4>Saç Kesimi</h4>
+                                <p>150₺'den başlayan</p>
+                            </div>
+                            <div class="service-option" data-service="sac-boyama">
+                                <div class="service-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h4>Saç Boyama</h4>
+                                <p>300₺'den başlayan</p>
+                            </div>
+                            <div class="service-option" data-service="fon-sekillendirme">
+                                <div class="service-icon">
+                                    <i class="fas fa-wind"></i>
+                                </div>
+                                <h4>Fön & Şekillendirme</h4>
+                                <p>100₺</p>
+                            </div>
+                            <div class="service-option" data-service="keratin-bakim">
+                                <div class="service-icon">
+                                    <i class="fas fa-spa"></i>
+                                </div>
+                                <h4>Keratin Bakım</h4>
+                                <p>500₺</p>
+                            </div>
+                            <div class="service-option" data-service="manikur-pedikur">
+                                <div class="service-icon">
+                                    <i class="fas fa-hand-sparkles"></i>
+                                </div>
+                                <h4>Manikür & Pedikür</h4>
+                                <p>200₺</p>
+                            </div>
+                            <div class="service-option" data-service="cilt-bakimi">
+                                <div class="service-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <h4>Cilt Bakımı</h4>
+                                <p>250₺</p>
+                            </div>
+                            <div class="service-option" data-service="kas-kirpik">
+                                <div class="service-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h4>Kaş & Kirpik</h4>
+                                <p>150₺</p>
+                            </div>
+                            <div class="service-option" data-service="makyaj">
+                                <div class="service-icon">
+                                    <i class="fas fa-magic"></i>
+                                </div>
+                                <h4>Makyaj</h4>
+                                <p>300₺</p>
+                            </div>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn-next">İleri</button>
+                        </div>
+                    </div>
+
+                    <!-- Adım 2: Tarih ve Saat Seçimi -->
+                    <div class="form-step" id="step2">
+                        <h3>Tarih ve saat seçin</h3>
+                        <div class="datetime-selection">
+                            <div class="date-picker">
+                                <h4>Tarih Seçin</h4>
+                                <input type="date" id="appointmentDate" required>
+                                <p class="date-info">En az 1 gün önceden randevu alabilirsiniz.</p>
+                            </div>
+                            <div class="time-picker">
+                                <h4>Saat Seçin</h4>
+                                <div class="time-slots">
+                                    <button type="button" class="time-slot" data-time="09:00">09:00</button>
+                                    <button type="button" class="time-slot" data-time="10:00">10:00</button>
+                                    <button type="button" class="time-slot" data-time="11:00">11:00</button>
+                                    <button type="button" class="time-slot" data-time="12:00">12:00</button>
+                                    <button type="button" class="time-slot" data-time="13:00">13:00</button>
+                                    <button type="button" class="time-slot" data-time="14:00">14:00</button>
+                                    <button type="button" class="time-slot" data-time="15:00">15:00</button>
+                                    <button type="button" class="time-slot" data-time="16:00">16:00</button>
+                                    <button type="button" class="time-slot" data-time="17:00">17:00</button>
+                                    <button type="button" class="time-slot" data-time="18:00">18:00</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn-prev">Geri</button>
+                            <button type="button" class="btn-next">İleri</button>
+                        </div>
+                    </div>
+
+                    <!-- Adım 3: Kişisel Bilgiler -->
+                    <div class="form-step" id="step3">
+                        <h3>Kişisel bilgilerinizi girin</h3>
+                        <div class="personal-info">
+                            <div class="form-group">
+                                <label for="name">Ad Soyad *</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefon *</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="notes">Notlar (İsteğe bağlı)</label>
+                                <textarea id="notes" rows="3" placeholder="Özel istekleriniz veya notlarınız..."></textarea>
+                            </div>
+                        </div>
+                        <div class="privacy-section">
+                            <div class="privacy-checkbox">
+                                <input type="checkbox" id="privacy" required>
+                                <label for="privacy">Kişisel verilerin korunması hakkında <a href="#" target="_blank">aydınlatma metnini</a> okudum ve kabul ediyorum.</label>
+                            </div>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn-prev">Geri</button>
+                            <button type="button" class="btn-next">İleri</button>
+                        </div>
+                    </div>
+
+                    <!-- Adım 4: Onay -->
+                    <div class="form-step" id="step4">
+                        <h3>Randevunuzu onaylayın</h3>
+                        <div class="appointment-summary">
+                            <div class="summary-item">
+                                <strong>Hizmet:</strong> <span id="summary-service">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Tarih:</strong> <span id="summary-date">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Saat:</strong> <span id="summary-time">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Ad Soyad:</strong> <span id="summary-name">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Telefon:</strong> <span id="summary-phone">-</span>
+                            </div>
+                        </div>
+                        <div class="confirmation-message">
+                            <p>Randevu talebiniz alındıktan sonra SMS ve e-posta ile onay bilgisi gönderilecektir.</p>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn-prev">Geri</button>
+                            <button type="submit" class="btn-submit">Randevuyu Onayla</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-spa"></i>
+                    <span>STUDIO ELİF</span>
+                </div>
+                <div class="footer-links">
+                    <a href="hakkimizda.html">Hakkımızda</a>
+                    <a href="hizmetler.html">Hizmetler</a>
+                    <a href="galeri.html">Galeri</a>
+                    <a href="iletisim.html">İletişim</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Studio Elif Güzellik Merkezi. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAlSsSsKy-g5ZqlElkLILKLKfSNJ_E7SV0",
+        authDomain: "randevuludemo.firebaseapp.com",
+        projectId: "randevuludemo",
+        storageBucket: "randevuludemo.firebasestorage.app",
+        messagingSenderId: "985251253002",
+        appId: "1:985251253002:web:4ef0d6125a8dd0adcf08f3",
+        measurementId: "G-G3B1Z9EEKR"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+
+    <script>
+        // Randevu formu için JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('appointmentForm');
+            const steps = document.querySelectorAll('.form-step');
+            const stepIndicators = document.querySelectorAll('.step');
+            let currentStep = 1;
+
+            // Form verilerini saklamak için
+            let formData = {
+                service: '',
+                date: '',
+                time: '',
+                name: '',
+                email: '',
+                phone: '',
+                notes: ''
+            };
+
+            // URL parametrelerinden hizmet seçimi
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedService = urlParams.get('service');
+            if (selectedService) {
+                formData.service = selectedService;
+                const serviceOption = document.querySelector(`[data-service="${selectedService}"]`);
+                if (serviceOption) {
+                    serviceOption.classList.add('selected');
+                }
+            }
+
+            // Hizmet seçimi
+            document.querySelectorAll('.service-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.service-option').forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    formData.service = this.dataset.service;
+                });
+            });
+
+            // Tarih seçimi
+            document.getElementById('appointmentDate').addEventListener('change', function() {
+                formData.date = this.value;
+                // Minimum tarih ayarı
+                const today = new Date();
+                const minDate = new Date(today);
+                minDate.setDate(today.getDate() + 1);
+                this.min = minDate.toISOString().split('T')[0];
+            });
+
+            // Saat seçimi
+            document.querySelectorAll('.time-slot').forEach(slot => {
+                slot.addEventListener('click', function() {
+                    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                    this.classList.add('selected');
+                    formData.time = this.dataset.time;
+                });
+            });
+
+            // Adım navigasyonu
+            function showStep(stepNumber) {
+                steps.forEach(step => step.classList.remove('active'));
+                stepIndicators.forEach(indicator => indicator.classList.remove('active'));
+
+                document.getElementById(`step${stepNumber}`).classList.add('active');
+                document.querySelector(`[data-step="${stepNumber}"]`).classList.add('active');
+                currentStep = stepNumber;
+            }
+
+            function validateStep(stepNumber) {
+                switch(stepNumber) {
+                    case 1:
+                        return formData.service !== '';
+                    case 2:
+                        return formData.date !== '' && formData.time !== '';
+                    case 3:
+                        return document.getElementById('name').value &&
+                               document.getElementById('phone').value &&
+                               document.getElementById('privacy').checked;
+                    default:
+                        return true;
+                }
+            }
+
+            // İleri butonları
+            document.querySelectorAll('.btn-next').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    if (validateStep(currentStep)) {
+                        if (currentStep === 3) {
+                            updateSummary();
+                        }
+                        showStep(currentStep + 1);
+                    } else {
+                        alert('Lütfen tüm gerekli alanları doldurunuz.');
+                    }
+                });
+            });
+
+            // Geri butonları
+            document.querySelectorAll('.btn-prev').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    showStep(currentStep - 1);
+                });
+            });
+
+            // Özet güncelleme
+            function updateSummary() {
+                formData.name = document.getElementById('name').value;
+                formData.phone = document.getElementById('phone').value;
+                formData.notes = document.getElementById('notes').value;
+
+                document.getElementById('summary-service').textContent = getServiceName(formData.service);
+                document.getElementById('summary-date').textContent = formatDate(formData.date);
+                document.getElementById('summary-time').textContent = formData.time;
+                document.getElementById('summary-name').textContent = formData.name;
+                document.getElementById('summary-phone').textContent = formData.phone;
+            }
+
+            function getServiceName(serviceKey) {
+                const services = {
+                    'sac-kesimi': 'Saç Kesimi',
+                    'sac-boyama': 'Saç Boyama',
+                    'fon-sekillendirme': 'Fön & Şekillendirme',
+                    'keratin-bakim': 'Keratin Bakım',
+                    'manikur-pedikur': 'Manikür & Pedikür',
+                    'cilt-bakimi': 'Cilt Bakımı',
+                    'kas-kirpik': 'Kaş & Kirpik',
+                    'makyaj': 'Makyaj'
+                };
+                return services[serviceKey] || serviceKey;
+            }
+
+            function formatDate(dateString) {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('tr-TR', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+
+            // Form gönderimi
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                // Local Storage'a kaydet (Firebase entegrasyonu için hazır)
+                saveAppointment(formData);
+
+                // Firebase'e kaydet (yorum satırı - gerçek entegrasyon için)
+                // try {
+                //     const docRef = await addDoc(collection(db, "appointments"), formData);
+                //     console.log("Randevu başarıyla kaydedildi, ID: ", docRef.id);
+                // } catch (e) {
+                //     console.error("Hata oluştu: ", e);
+                // }
+
+                // Başarı mesajı
+                alert('Randevu talebiniz başarıyla alındı! Kısa süre içinde size dönüş yapacağız.');
+                window.location.href = 'index.html';
+            });
+
+            // Başlangıç tarihi ayarı
+            const dateInput = document.getElementById('appointmentDate');
+            const today = new Date();
+            const minDate = new Date(today);
+            minDate.setDate(today.getDate() + 1);
+            dateInput.min = minDate.toISOString().split('T')[0];
+        });
+    </script>
+</body>
+</html>
